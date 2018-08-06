@@ -31,16 +31,15 @@ class Chat extends React.Component {
 			})
 			this.setState({ message: '' })
 		}
+		this.inputEnter = ev => {
+			ev.preventDefault()
+			if (ev.keyCode === 13) {
+				document.getElementById('sendButton').click()
+			}
+		}
 	}
 
 	render() {
-		let input = document.getElementById('inputMessage')
-		input.addEventListener('keyup', function(event) {
-			event.preventDefault()
-			if (event.keyCode === 13) {
-				document.getElementById('sendButton').click()
-			}
-		})
 		return (
 			<div className="container">
 				<div className="row">
@@ -74,6 +73,7 @@ class Chat extends React.Component {
 									placeholder="Message"
 									className="form-control"
 									value={this.state.message}
+									onKeyUp={ev => this.inputEnter(ev)}
 									onChange={ev => this.setState({ message: ev.target.value })}
 								/>
 								<br />
