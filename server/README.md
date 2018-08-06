@@ -1,0 +1,33 @@
+# Chatroom server
+
+## env
+
+```json
+{
+  "name": "chatroom-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel app.js -d dist && node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "express": "^4.16.3",
+    "socket.io": "^2.0.4"
+  },
+  "description": "",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
+  }
+}
+```
+
+## Usage
+
+ > npm start
+ 
+server run in localhost:5000
